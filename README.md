@@ -37,5 +37,19 @@ The following patterns are written to memory:
 
 (I briefly considered making a barber-pole or inch-worm test, but reconsidered, thinking that might be overkill!)
 
+## Building
+
+You need
+
+* Z88DK (http://z88dk.org/)
+* a build environment with make (Linux, Unix, Mac OS, Cygwin, MSYS2, whatever)
+* The Z88DK environment sourced (using the set-environment.sh or env.bat scripts)
+
+Building it simply involves invoking make.
+
+```
+make
+```
+
 Author: Thom Cherryhomes <thom.cherryhomes at gmail.com>
 
