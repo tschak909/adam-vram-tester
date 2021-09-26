@@ -7,6 +7,7 @@
 
 #include <msx.h>
 #include <conio.h>
+#include <games.h>
 #include "colorbars.h"
 #include "vram_test.h"
 
@@ -16,6 +17,15 @@ void setup(void)
   msx_color(INK_WHITE,INK_LIGHT_BLUE,INK_LIGHT_BLUE);
   clrscr();
 }
+
+#ifdef CART_ROM
+#undef cgetc
+void cgetc(void)
+{
+    while (joystick(3) == 0) { }
+}
+
+#endif
 
 void banner(void)
 {

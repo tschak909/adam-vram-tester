@@ -6,7 +6,7 @@
 #include <conio.h>
 #include "colorbars.h"
 
-char bars_text[] =
+const char bars_text[] =
   {
    'T', ' ', 'B', ' ', 'M', ' ', 'L', ' ', 'D', ' ', 'L', ' ', 'D', ' ', 'C', ' ', 'M', ' ', 'L', ' ', 'D', ' ', 'L', ' ', 'D', ' ', 'M', ' ', 'G', ' ', 'W', ' ',
    'R', ' ', 'L', ' ', 'E', ' ', 'I', ' ', 'A', ' ', 'I', ' ', 'A', ' ', 'Y', ' ', 'E', ' ', 'I', ' ', 'A', ' ', 'I', ' ', 'A', ' ', 'A', ' ', 'R', ' ', 'H', ' ',
@@ -34,6 +34,11 @@ char bars_text[] =
    ' ', ' ', ' ', ' ', 'P', 'R', 'E', 'S', 'S', ' ', 'S', 'P', 'A', 'C', 'E', ' ', 'T', 'O', ' ', 'C', 'O', 'N', 'T', 'I', 'N', 'U', 'E', ' ', ' ', ' ', ' ', ' ',
    0x00
   };
+
+#ifdef CART_ROM
+#undef cgetc
+extern void cgetc();
+#endif
 
 void colorbars(void)
 {
